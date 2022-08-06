@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import App from "./components/app";
-import AddBook from "./components/add-book";
+import AddCar from "./components/add-cars";
 import Navbar from "./components/navbar";
 
 import "./style/main.scss";
@@ -15,8 +15,8 @@ function main() {
         <Route exact path="/">
           <App />
         </Route>
-        <Route path="/add-book">
-          <AddBook />
+        <Route path="/add-cars">
+          <AddCar />
         </Route>
       </Switch>
     </BrowserRouter>,

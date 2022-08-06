@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 export default function addCar() {
-  const [Make, setMake] = useState("");
-  const [Model, setModel] = useState("");
-  const [price, setPrice] = useState("");
+  const [make, setMake] = useState("");
+  const [model, setModel] = useState("");
+  const [price, setPrice] = useState();
   const [description, setDescription] = useState("");
 
-  const postBook = (event) => {
+  const postCar = (event) => {
     axios
       .post("http://127.0.0.1:5000/car/add", {
         make: make,
@@ -26,13 +26,13 @@ export default function addCar() {
       <form className="add-car-form" onSubmit={postCar}>
         <input
           className="add-car-form-input"
-          onChange={(event) => setName(event.target.value)}
+          onChange={(event) => setMake(event.target.value)}
           type="text"
           placeholder="Make"
         />
         <input
           className="add-car-form-input"
-          onChange={(event) => setAuthor(event.target.value)}
+          onChange={(event) => setModel(event.target.value)}
           type="text"
           placeholder="Model"
         />
@@ -46,7 +46,13 @@ export default function addCar() {
           className="add-car-form-input"
           onChange={(event) => setDescription(event.target.value)}
           type="text"
-          placeholder="description"
+          placeholder="Tell me about your baby"
+        />
+        <input
+          className="add-car-form-input"
+          onChange={(event) => setImg_url(event.target.value)}
+          type="file"
+          placeholder="Show your baby if you want to"
         />
         <button className="add-car-form-input">Add A Whip!</button>
       </form>
