@@ -4,7 +4,7 @@ import axios from "axios";
 export default function garage(props) {
   const deleteCar = () => {
     axios
-      .delete(`http://127.0.0.1:5000/car/${props.carData.id}`)
+      .delete(`https://dlk-the-garage.herokuapp.com/car/${props.carData.id}`)
       .then((response) => console.log("success", response));
   };
 

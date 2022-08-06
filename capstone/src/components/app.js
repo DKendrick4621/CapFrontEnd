@@ -13,7 +13,7 @@ export default class App extends Component {
 
   componentDidMount() {
     axios
-      .get("http://127.0.0.1:5000/car/get", {
+      .get("https://dlk-the-garage.herokuapp.com/car/get", {
         headers: { "Access-Control-Allow-Origin": "*" },
       })
       .then((response) => {

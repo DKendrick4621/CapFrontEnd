@@ -9,7 +9,7 @@ export default function addCar() {
 
   const postCar = (event) => {
     axios
-      .post("http://127.0.0.1:5000/car/add", {
+      .post("https://dlk-the-garage.herokuapp.com/car/add", {
         make: make,
         model: model,
         price: price,
